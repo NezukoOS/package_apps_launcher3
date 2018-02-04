@@ -697,6 +697,11 @@ public final class Utilities {
         }
     }
 
+    public static boolean isWorkspaceEditAllowed(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(InvariantDeviceProfile.KEY_WORKSPACE_EDIT, true);
+    }
+
     /**
      * Shows authentication screen to confirm credentials (pin, pattern or password) for the current
      * user of the device.
