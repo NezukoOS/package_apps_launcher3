@@ -134,6 +134,9 @@ public final class Utilities {
     public static final String KEY_DT_GESTURE = "pref_dt_gesture";
     public static final String KEY_NOTIFICATION_GESTURE = "pref_notification_gesture";
 
+    public static final String SHOW_WORKSPACE_GRADIENT = "pref_show_workspace_grad";
+    public static final String SHOW_HOTSEAT_GRADIENT = "pref_show_hotseat_grad";
+
     /**
      * Indicates if the device has a debug build. Should only be used to store additional info or
      * add extra logging and not for changing the app behavior.
@@ -714,6 +717,15 @@ public final class Utilities {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(KEY_DT_GESTURE, true);
     }
+
+    public static boolean showWorkspaceGradient(Context context) {
+        return getPrefs(context).getBoolean(SHOW_WORKSPACE_GRADIENT, true);
+    }
+
+    public static boolean showHotseatGradient(Context context) {
+        return getPrefs(context).getBoolean(SHOW_HOTSEAT_GRADIENT, true);
+    }
+
 
     /**
      * Shows authentication screen to confirm credentials (pin, pattern or password) for the current
